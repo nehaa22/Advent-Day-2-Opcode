@@ -11,11 +11,16 @@ class Operation:
         a, b, result = self.parameters(pos, position)
 
         if start == 1:
-
             addition = a + b
             position[result] = addition
-
             return position
+
+        if start == 2:
+            multiply = a * b
+            position[result] = multiply
+            return position
+
+        return position
 
     def parameters(self, pos, position):
         first = position[pos + 1]
