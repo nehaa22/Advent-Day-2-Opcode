@@ -1,5 +1,4 @@
 import unittest
-import numpy as np
 from pythonClass.Operation import Operation
 
 
@@ -20,6 +19,7 @@ class OperationTest(unittest.TestCase):
         op = Operation(input_array)
         result_array = self.resultArrayOne
         self.assertEqual(result_array, op.compute(input_array))
+
 
 
 if __name__ == '__main__':

@@ -8,15 +8,19 @@ class Operation:
 
         start = position[pos]
 
-        if start == 1:
-            first = position[pos + 1]
-            second = position[pos + 2]
-            result = pos + 3
+        a, b, result = self.parameters(pos, position)
 
-            a = position[first]
-            b = position[second]
+        if start == 1:
 
             addition = a + b
             position[result] = addition
 
             return position
+
+    def parameters(self, pos, position):
+        first = position[pos + 1]
+        second = position[pos + 2]
+        result = pos + 3
+        a = position[first]
+        b = position[second]
+        return a, b, result
