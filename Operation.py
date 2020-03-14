@@ -3,8 +3,20 @@ class Operation:
     def __init__(self, arr):
         self.arr = arr
 
-    def compute(self, arr):
-        index = 0
-        if arr[index] == 1:
-            arr[index + 3] = arr[index + 1] + arr[index + 2]
-            return arr[index+3]
+    def compute(self, position):
+        pos = 0
+
+        start = position[pos]
+
+        if start == 1:
+            first = pos + 1
+            second = pos + 2
+            result = pos + 3
+
+            a = position[first]
+            b = position[second]
+
+            addition = a + b
+            position[result] = addition
+
+            return position
