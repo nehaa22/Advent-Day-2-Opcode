@@ -9,8 +9,8 @@ class Operation:
         start = position[pos]
 
         if start == 1:
-            first = pos + 1
-            second = pos + 2
+            first = position[pos + 1]
+            second = position[pos + 2]
             result = pos + 3
 
             a = position[first]

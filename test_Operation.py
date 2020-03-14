@@ -6,8 +6,8 @@ from pythonClass.Operation import Operation
 class OperationTest(unittest.TestCase):
 
     def setUp(self):
-        self.addInputArrayOne = [1, 3, 3, 4]
-        self.resultArrayOne = [1, 3, 3, 6]
+        self.addInputArrayOne = [1, 4, 5, 4, 5, 6]
+        self.resultArrayOne = [1, 4, 5, 11, 5, 6]
 
     def test_add(self):
         input_array = self.addInputArrayOne
