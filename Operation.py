@@ -9,17 +9,15 @@ class Operation:
         start = position[pos]
 
         a, b, result = self.parameters(pos, position)
+        output = position[result]
 
         if start == 1:
-            addition = a + b
-            position[result] = addition
-            return position
+            output = a + b
 
         if start == 2:
-            multiply = a * b
-            position[result] = multiply
-            return position
+            output = a * b
 
+        position[result] = output
         return position
 
     def parameters(self, pos, position):
