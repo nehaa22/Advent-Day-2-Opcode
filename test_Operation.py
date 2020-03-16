@@ -34,28 +34,29 @@ class OperationTest(unittest.TestCase):
         result_array = self.outputOne
         self.assertEqual(result_array, op.compute(input_array))
 
-    def test_should_add_elements_and_return_array_if_first_element_is_1(self):
+    def test_multiply_element_if_start_is_1(self):
         input_array = self.inputTwo
         op = Operation()
         result_array = self.outputTwo
         self.assertEqual(result_array, op.compute(input_array))
 
-    def test_should_multiply_elements_and_return_array_if_first_element_is_2(self):
+    def test_multiply_elements_and_store_result_in_specified_index(self):
         input_array = self.inputThree
         op = Operation()
         result_array = self.outputThree
         self.assertEqual(result_array, op.compute(input_array))
 
-    def test_new(self):
+    def test_add_multiply_elements_and_store_result_in_specified_index(self):
         input_array = self.inputFour
         op = Operation()
         result_array = self.outputFour
         self.assertEqual(result_array, op.compute(input_array))
 
-    def test_final(self):
+    def test_final_puzzle_input(self):
         input_array = self.puzzle_input
         op = Operation()
-        op.compute(input_array)
+        answer = op.compute(input_array)
+        self.assertEqual(1028256,answer[0])
 
 
 if __name__ == '__main__':
