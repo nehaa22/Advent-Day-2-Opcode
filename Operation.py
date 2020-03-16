@@ -3,19 +3,16 @@ import sys
 
 class Operation:
 
-    def __init__(self, arr):
-        self.arr = arr
-
-    def compute(self, position):
+    def compute(self, puzzle):
 
         pos = 0
 
-        while pos < len(position)-4:
+        while pos <= len(puzzle) - 4:
 
-            start = position[pos]
+            start = puzzle[pos]
 
-            a, b, result = self.parameters(pos, position)
-            output = position[result]
+            a, b, result = self.parameters(pos, puzzle)
+            output = puzzle[result]
 
             if start == 1:
                 output = self.addvalue(a, b)
@@ -24,20 +21,18 @@ class Operation:
                 output = self.multiplyvalue(a, b)
 
             if start == 99:
-                sys.exit()
+                return puzzle
 
-            position[result] = output
+            puzzle[result] = output
             pos += 4
 
-        return position
+        return puzzle
 
     def addvalue(self, a, b):
         return a + b
 
-
     def multiplyvalue(self, a, b):
         return a * b
-
 
     def parameters(self, pos, position):
         first = position[pos + 1]
