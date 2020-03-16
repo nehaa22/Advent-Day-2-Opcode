@@ -12,13 +12,16 @@ class Operation:
         output = position[result]
 
         if start == 1:
-            output = a + b
+            output = self.addvalue(a,b)
 
         if start == 2:
             output = a * b
 
         position[result] = output
         return position
+
+    def addvalue(self, a, b):
+        return a + b
 
     def parameters(self, pos, position):
         first = position[pos + 1]
