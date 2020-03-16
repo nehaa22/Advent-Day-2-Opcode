@@ -1,35 +1,50 @@
+import sys
+
+
 class Operation:
 
     def __init__(self, arr):
         self.arr = arr
 
     def compute(self, position):
+
         pos = 0
 
-        start = position[pos]
+        while pos < len(position)-1:
 
-        a, b, result = self.parameters(pos, position)
-        output = position[result]
+            start = position[pos]
 
-        if start == 1:
-            output = self.addvalue(a,b)
+            a, b, result = self.parameters(pos, position)
+            output = position[result]
 
-        if start == 2:
-            output = self.multiplyvalue(a,b)
+            if start == 1:
+                output = self.addvalue(a, b)
 
-        position[result] = output
-        return position
+            if start == 2:
+                output = self.multiplyvalue(a, b)
+
+            if start == 99:
+                sys.exit()
+
+            position[result] = output
+            return position
+
+        pos += 4
+
+
 
     def addvalue(self, a, b):
         return a + b
 
+
     def multiplyvalue(self, a, b):
         return a * b
+
 
     def parameters(self, pos, position):
         first = position[pos + 1]
         second = position[pos + 2]
-        result = pos + 3
+        result = position[pos + 3]
         a = position[first]
         b = position[second]
         return a, b, result

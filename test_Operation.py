@@ -6,9 +6,13 @@ class OperationTest(unittest.TestCase):
 
     def setUp(self):
         self.inputArrayForAdd = [1, 4, 5, 4, 5, 6]
-        self.resultArrayAddition = [1, 4, 5, 11, 5, 6]
+        self.resultArrayAddition = [1, 4, 5, 4, 11, 6]
         self.inputArrayForMultiply = [2, 4, 5, 4, 5, 6]
-        self.resultArrayMultiply = [2, 4, 5, 30, 5, 6]
+        self.resultArrayMultiply = [2, 4, 5, 4, 30, 6]
+        self.inputArrayForHalt = [99, 4, 5, 4, 5, 6]
+        self.resultArrayHalt = [99, 4, 5, 4, 5, 6]
+        self.input = [1, 1, 1, 4, 99, 5, 6, 0, 99]
+        self.output = [30, 1, 1, 4, 2, 5, 6, 0, 99]
 
     def test_add_element_first_second_position(self):
         input_array = self.inputArrayForAdd
@@ -27,6 +31,18 @@ class OperationTest(unittest.TestCase):
         op = Operation(input_array)
         result_array = self.resultArrayMultiply
         self.assertEqual(result_array, op.compute(input_array))
+
+    def test_should_halt_operation__if_first_element_is_99(self):
+        input_array = self.inputArrayForMultiply
+        op = Operation(input_array)
+        result_array = self.resultArrayMultiply
+        self.assertEqual(result_array, op.compute(input_array))
+
+    # def test_new(self):
+    #     input_array = self.input
+    #     op = Operation(input_array)
+    #     result_array = self.output
+    #     self.assertEqual(result_array, op.compute(input_array))
 
 
 if __name__ == '__main__':
