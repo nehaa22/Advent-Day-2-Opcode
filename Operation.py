@@ -10,7 +10,7 @@ class Operation:
 
         pos = 0
 
-        while pos < len(position)-1:
+        while pos < len(position)-4:
 
             start = position[pos]
 
@@ -27,11 +27,9 @@ class Operation:
                 sys.exit()
 
             position[result] = output
-            return position
+            pos += 4
 
-        pos += 4
-
-
+        return position
 
     def addvalue(self, a, b):
         return a + b

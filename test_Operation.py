@@ -38,11 +38,11 @@ class OperationTest(unittest.TestCase):
         result_array = self.resultArrayMultiply
         self.assertEqual(result_array, op.compute(input_array))
 
-    # def test_new(self):
-    #     input_array = self.input
-    #     op = Operation(input_array)
-    #     result_array = self.output
-    #     self.assertEqual(result_array, op.compute(input_array))
+    def test_new(self):
+        input_array = self.input
+        op = Operation(input_array)
+        result_array = self.output
+        self.assertEqual(result_array, op.compute(input_array))
 
 
 if __name__ == '__main__':
