@@ -52,12 +52,6 @@ class OperationTest(unittest.TestCase):
         result_array = self.outputFour
         self.assertEqual(result_array, op.compute(input_array))
 
-    def test_final_puzzle_input(self):
-        input_array = self.puzzle_input
-        op = Operation()
-        answer = op.compute(input_array)
-        self.assertEqual(1028256,answer[0])
-
 
 if __name__ == '__main__':
     unittest.main()
